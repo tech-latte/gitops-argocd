@@ -55,7 +55,7 @@ jobs:
     - name: Build the Docker image # push The image to the docker hub
       run: |
           git_hash=$(git rev-parse --short "$GITHUB_SHA")
-          docker build . --file Dockerfile --tag $DOCKER_USER/$REPO_NAME:$git_hash
+          docker build . --file Dockerfile --tag $DOCKER_USER/$REPO_NAME:${GITHUB_REF##*/}-$git_hash
           docker push $DOCKER_USER/$REPO_NAME:${GITHUB_REF##*/}-$git_hash
 
     - name: Update Version
