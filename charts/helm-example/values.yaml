@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   pullPolicy: IfNotPresent
   repository: techlatte/gitops-argocd
-  version: main-035ee36
+  #version: main-035ee36
 
 imagePullSecrets: []
 nameOverride: ""
